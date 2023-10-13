@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Homework 1</title>
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="root">
+        <button v-on:click="reverseMessage" class="btn">{{nameButton}}</button>
+
+        <ol>
+          <li v-for="(item, index) in lists" v-on:click="remove(index)">
+            {{item}}
+          </li>
+        </ol>
+        <button v-on:click="addItemList" class="btn">Добавить</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
