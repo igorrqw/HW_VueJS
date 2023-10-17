@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <ol>
+        <li v-for="item in product" :key="item.id">
+          {{item.name}} - {{item.price}}
+        </li>
+      </ol>
+      <button @click="SortingMax">Цена по возрастанию</button>
+      <button @click="SortingMin">Цена по убыванию</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            product: [
+              { id: 1, name: "Хлеб черный", price: "78" },
+              { id: 2, name: "Хлеб белый", price: "58" },
+              { id: 3, name: "Лаваш", price: "103" },
+              { id: 4, name: "Багет", price: "73" },
+              { id: 5, name: "Чиабатта", price: "82" },
+            ],
+          };
+        },
+        methods: {
+          SortingMax() {
+            this.product.sort((x, y) => x.price - y.price);
+          },
+          SortingMin() {
+            this.product.sort((x, y) => y.price - x.price);
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
