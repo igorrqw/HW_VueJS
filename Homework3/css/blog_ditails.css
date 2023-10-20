@@ -1,0 +1,7 @@
+.banner_ditail {
+  background-image: url("./img/baner_ditail.jpg");
+  height: 356px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}/*# sourceMappingURL=blog_ditails.css.map */
